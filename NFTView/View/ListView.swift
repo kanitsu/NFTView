@@ -16,7 +16,7 @@ struct ListView: View {
         ScrollView {
             Text("Address: \(self.viewModel.address)")
                 .font(.footnote)
-            Text("Balance: \(self.viewModel.balance)")
+            Text("Ξ \(self.viewModel.balance) ETH")
             Spacer()
             LazyVStack {
                 ForEach(Array(stride(from: 0, to: viewModel.dataSource.count - 1, by: 2)), id: \.self) { index in

@@ -100,7 +100,6 @@ class ListViewModel: ObservableObject {
                 }, receiveValue: { [weak self] response in
                     guard let self = self else { return }
                     let walletInfo = BalanceViewModel(info: response)
-                    let trap = walletInfo.balance
                     self.balance = walletInfo.balance
                 }
             )
