@@ -25,7 +25,7 @@ class ListViewModel: ObservableObject {
         if !loading {
             do {
                 loading = true
-                try fetchAssets(forAddress: self.address)
+                try self.fetchAssets(forAddress: self.address)
             }
             catch {
                 fatalError("\(error.localizedDescription)")
@@ -36,7 +36,7 @@ class ListViewModel: ObservableObject {
     func fetchAssets(forAddress address: String) throws {
         var publisher : AnyPublisher<OpenseaData, APIError>
         do {
-            try publisher = assetsFetcher.getAssets(forAddress: address, withCursor: nextCursor)
+            try publisher = self.assetsFetcher.getAssets(forAddress: address, withCursor: nextCursor)
         }
         catch {
             throw error
@@ -71,7 +71,7 @@ class ListViewModel: ObservableObject {
     
     func getBalance() {
         do {
-            try fetchBalance(forAddress: self.address)
+            try self.fetchBalance(forAddress: self.address)
         }
         catch {
             fatalError("\(error.localizedDescription)")
@@ -81,7 +81,7 @@ class ListViewModel: ObservableObject {
     func fetchBalance(forAddress address: String) throws {
         var publisher : AnyPublisher<EVMData, APIError>
         do {
-            try publisher = balanceFetcher.getBalance(forAddress: self.address)
+            try publisher = self.balanceFetcher.getBalance(forAddress: self.address)
         }
         catch {
             throw error

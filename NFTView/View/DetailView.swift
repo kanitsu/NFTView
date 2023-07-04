@@ -42,9 +42,3 @@ struct DetailView: View {
         .navigationBarTitle(Text(self.viewModel.collection_name), displayMode: .inline)
     }
 }
-
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailView()
-//    }
-//}

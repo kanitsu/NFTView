@@ -16,27 +16,27 @@ class DetailViewModel: ObservableObject {
     }
     
     var id: Int {
-        return item.id
+        return self.item.id
     }
     
     var imageUrl: String {
-        return item.image_url ?? "Invalid image URL"
+        return self.item.image_url ?? "Invalid image URL"
     }
     
     var name: String {
-        return item.name ?? "Item Name"
+        return self.item.name ?? "Item Name"
     }
     
     var description: String {
-        return item.description ?? "Item Description"
+        return self.item.description ?? "Item Description"
     }
     
     var permalink: String {
-        return item.permalink ?? "Invalid permalink URL"
+        return self.item.permalink ?? "Invalid permalink URL"
     }
     
     var collection_name: String {
-        guard let collection = item.collection else { return "Collection Name" }
+        guard let collection = self.item.collection else { return "Collection Name" }
         return collection.name ?? "Collection Name"
     }
 }

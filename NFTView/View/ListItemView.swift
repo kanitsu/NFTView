@@ -19,9 +19,9 @@ struct ListItemView: View {
     var body: some View {
         VStack {
             Spacer()
-            URLImage(url: URL(string: viewModel.thumbnailUrl))
+            URLImage(url: URL(string: self.viewModel.thumbnailUrl))
             Spacer()
-            Text(viewModel.name)
+            Text(self.viewModel.name)
         }
         .padding(5)
         .cornerRadius(20) /// make the background rounded
@@ -30,13 +30,7 @@ struct ListItemView: View {
                 .stroke(Color.black, lineWidth: 3)
         )
         .onTapGesture {
-            tapOnNFT(viewModel.rawData)
+            self.tapOnNFT(self.viewModel.rawData)
         }
     }
 }
-
-//struct ListItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListItemView()
-//    }
-//}

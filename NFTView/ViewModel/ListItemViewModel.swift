@@ -15,19 +15,19 @@ struct ListItemViewModel: Identifiable {
     }
     
     var id: Int {
-        return item.id
+        return self.item.id
     }
     
     var thumbnailUrl: String {
-        return item.image_thumbnail_url ?? "Invalid thumbnail URL"
+        return self.item.image_thumbnail_url ?? "Invalid thumbnail URL"
     }
     
     var name: String {
-        return item.name ?? "Item Name"
+        return self.item.name ?? "Item Name"
     }
     
     var rawData: OpenseaData.Asset {
-        return item
+        return self.item
     }
 }
 

@@ -11,6 +11,8 @@ NFT detail page shows its collection name, image, name description and permalink
 
 
 ## Note
+The App doesn't use API key for Opensea. If the NFT list is empty,  please verify if the quota is still available.
+
 SVG file currently not supported and will loading indefinitely.
 
 Other erroneous image including because of null URL, will be replaced with an image of red triangle with white exclamation mark (error-icon image in Assets.xcassets)

@@ -12,7 +12,7 @@ struct URLImage: View {
     @State private var image: UIImage?
     
     var body: some View {
-        if let image = image {
+        if let image = self.image {
             Image(uiImage: image)
                 .resizable()
                 .scaledToFit()
@@ -27,17 +27,17 @@ struct URLImage: View {
     
     private func loadImage() {
         guard let url = url else {
-            image = UIImage(named: "error-icon")
+            self.image = UIImage(named: "error-icon")
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
-                image = UIImage(named: "error-icon")
+                self.image = UIImage(named: "error-icon")
                 return
             }
             
             DispatchQueue.main.async {
-                image = UIImage(data: data)
+                self.image = UIImage(data: data)
             }
         }.resume()
     }

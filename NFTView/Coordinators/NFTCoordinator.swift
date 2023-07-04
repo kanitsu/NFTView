@@ -16,9 +16,9 @@ struct NFTCoordinator: View {
         NavigationView{
             VStack {
                 ListView(tapOnNFT: { asset in
-                    selectedItemViewModel = DetailViewModel(asset: asset)
+                    self.selectedItemViewModel = DetailViewModel(asset: asset)
                 })
-                if let item = selectedItemViewModel {
+                if let item = self.selectedItemViewModel {
                     EmptyNavigationLink(destination: DetailView(selectedItemViewModel: item, permalinkAction: permalinkAction), selectedItem: $selectedItemViewModel)
                 }
             }

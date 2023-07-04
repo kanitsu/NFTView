@@ -23,8 +23,8 @@ struct EmptyNavigationLink<Destination>: View where Destination: View {
     
     var body: some View {
         NavigationLink(
-            destination: destination,
-            isActive: isActive,
+            destination: self.destination,
+            isActive: self.isActive,
             label: {
                 EmptyView()
             })
