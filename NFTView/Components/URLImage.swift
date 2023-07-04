@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SVGKit
 
 struct URLImage: View {
     let url: URL?

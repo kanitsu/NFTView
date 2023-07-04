@@ -20,7 +20,13 @@ struct DetailView: View {
     var body: some View {
         Spacer()
         VStack {
-            URLImage(url: URL(string: self.viewModel.imageUrl))
+            if self.viewModel.imageUrl.hasSuffix(".svg") {
+                GeometryReader { geometry in
+                    SVGImageView(url: URL(string: self.viewModel.imageUrl)!, size: CGSize(width: geometry.size.width, height: geometry.size.height))
+                }
+            } else {
+                URLImage(url: URL(string: self.viewModel.imageUrl))
+            }
             GeometryReader { geometry in
                 Text(self.viewModel.name)
                     .font(.title)

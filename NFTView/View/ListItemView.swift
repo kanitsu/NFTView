@@ -19,7 +19,13 @@ struct ListItemView: View {
     var body: some View {
         VStack {
             Spacer()
-            URLImage(url: URL(string: self.viewModel.thumbnailUrl))
+            if self.viewModel.thumbnailUrl.hasSuffix(".svg") {
+                GeometryReader { geometry in
+                    SVGImageView(url: URL(string:self.viewModel.thumbnailUrl)!, size: CGSize(width: geometry.size.width, height: geometry.size.height))
+                }
+            } else {
+                URLImage(url: URL(string: self.viewModel.thumbnailUrl))
+            }
             Spacer()
             Text(self.viewModel.name)
         }
