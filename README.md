@@ -1,7 +1,11 @@
 # NFTView
 
 ## How to use
-Open the project with xCode, build and run.
+Open terminal at root folder and run 
+
+`pod install`
+
+Then, open the workspace (`NFTView.xcworkspace`) file with xCode, build and run.
 
 The first page shows current wallet address, balance in ETH and list of NFTs.
 
